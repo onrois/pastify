@@ -14,16 +14,26 @@ struct CategoryItemView: View {
     var body: some View {
         let isSelected = currentCategory?.name == category.name
         
-        Text(category.name)
-            .padding(.horizontal, 20)
-            .padding(.vertical, 6)
-            .background(isSelected ? .yellow.opacity(0.2) : Colors.bgTertiary)
-            .cornerRadius(8)
-            .roundedBorder(isSelected ? .yellow.opacity(1) : .gray.opacity(1), radius: 8)
-            .animation(.easeIn, value: UUID())
-            .onTapGesture {
-                currentCategory = category
-            }
+        HStack {
+            Text(category.name)
+                .font(.r16)
+                .onTapGesture {
+                    currentCategory = category
+                }
+        }
+        .padding(.horizontal, Spacing.medium)
+        .padding(.vertical, Spacing.xSmall)
+        .background(isSelected ? MyColor.accentPrimaryBg : MyColor.bgSecondary)
+        .cornerRadius(Radius.medium)
+        .roundedBorder(isSelected ? MyColor.accentPrimary : MyColor.bgTertiary, radius: Radius.medium)
+        .foregroundColor(isSelected ? MyColor.textPrimary : MyColor.textPrimary)
+        .animation(.easeIn, value: UUID())
+    }
+    
+    func colorDot(color: Color) -> some View {
+        Rectangle().frame(width: 10, height: 10)
+            .foregroundColor(color).cornerRadius(Radius.round)
+        
     }
 }
 

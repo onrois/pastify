@@ -14,7 +14,8 @@ struct ClipboardView: View {
     var body: some View {
         NavigationView {
             VStack() {
-                ScrollView(.horizontal, showsIndicators: false){
+                HSpacer(.xSmall)
+                ScrollView(.horizontal, showsIndicators: false) {
                     LazyHStack() {
                         ForEach(viewModel.categories, id: \.name) { category in
                             CategoryItemView(category: category, currentCategory: $viewModel.currentCategory)

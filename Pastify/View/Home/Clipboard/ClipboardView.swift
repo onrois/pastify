@@ -13,20 +13,36 @@ struct ClipboardView: View {
     
     var body: some View {
         NavigationView {
-            VStack() {
-                HSpacer(.xSmall)
-                ScrollView(.horizontal, showsIndicators: false) {
-                    LazyHStack() {
-                        ForEach(viewModel.categories, id: \.name) { category in
-                            CategoryItemView(category: category, currentCategory: $viewModel.currentCategory)
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack() {
+                    HSpacer(.xSmall)
+                    
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        LazyHStack() {
+                            ForEach(viewModel.categories, id: \.name) { category in
+                                CategoryItemView(category: category, currentCategory: $viewModel.currentCategory)
+                            }
                         }
+                        .padding(.horizontal)
+                        
                     }
-                    .padding(.horizontal)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .fixedSize(horizontal: false, vertical: true)
+                    
+                    
+                    LazyVStack {
+                        ForEach(0...20, id: \.self) { number in
+                            Text(number.description)
+                                .font(.r20)
+                                .padding(.vertical)
+                                .frame(maxWidth: .infinity)
+                                .background(MyColor.accentPrimaryBg)
+                                .cornerRadius(Radius.medium)
+                        }
+                    }.padding()
+                    
+                        .navigationTitle("Clipboard")
                 }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .fixedSize(horizontal: false, vertical: true)
-                
-                .navigationTitle("Clipboard")
             }
             .frame(maxHeight: .infinity, alignment: .topLeading)
         }

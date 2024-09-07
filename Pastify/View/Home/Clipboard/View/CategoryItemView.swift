@@ -22,7 +22,7 @@ struct CategoryItemView: View {
                 }
         }
         .padding(.horizontal, Spacing.medium)
-        .padding(.vertical, Spacing.xSmall)
+        .padding(.vertical, Spacing.small)
         .background(isSelected ? MyColor.accentPrimaryBg : MyColor.bgSecondary)
         .cornerRadius(Radius.medium)
         .roundedBorder(isSelected ? MyColor.accentPrimary : MyColor.bgTertiary, radius: Radius.medium)

@@ -6,3 +6,14 @@
 //
 
 import Foundation
+import SwiftUI
+
+struct Category {
+    let name: String
+    let createdOn: Date
+    
+    init(_ name: String) {
+        self.name = name
+        self.createdOn = Date.now
+    }
+}

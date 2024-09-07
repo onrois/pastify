@@ -8,11 +8,29 @@
 import SwiftUI
 
 struct CategoryItemView: View {
+    let category: Category
+    @Binding var currentCategory: Category?
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        let isSelected = currentCategory?.name == category.name
+        
+        Text(category.name)
+            .padding(.horizontal, 20)
+            .padding(.vertical, 6)
+            .background(isSelected ? .yellow.opacity(0.2) : .gray.opacity(0.2))
+            .cornerRadius(8)
+            .roundedBorder(isSelected ? .yellow.opacity(1) : .gray.opacity(1), radius: 8)
+            .animation(.easeIn, value: UUID())
+            .onTapGesture {
+                currentCategory = category
+            }
     }
 }
 
 #Preview {
-    CategoryItemView()
+    @State var currentCategory: Category? = Category("Default")
+    
+    return VStack {
+        CategoryItemView(category: Category("Default"), currentCategory: $currentCategory)
+    }
 }

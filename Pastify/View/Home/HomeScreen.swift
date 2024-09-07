@@ -5,4 +5,16 @@
 //  Created by Hiren Rafaliya on 07/09/24.
 //
 
-import Foundation
+import SwiftUI
+
+struct HomeScreen: View {
+    var body: some View {
+        NavigationStack {
+            ClipboardView()
+        }
+    }
+}
+
+#Preview {
+    HomeScreen()
+}

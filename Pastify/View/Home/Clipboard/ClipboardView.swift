@@ -8,8 +8,27 @@
 import SwiftUI
 
 struct ClipboardView: View {
+    
+    @StateObject private var viewModel = ClipboardViewModel()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            VStack() {
+                ScrollView(.horizontal, showsIndicators: false){
+                    LazyHStack() {
+                        ForEach(viewModel.categories, id: \.name) { category in
+                            CategoryItemView(category: category, currentCategory: $viewModel.currentCategory)
+                        }
+                    }
+                    .padding(.horizontal)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .fixedSize(horizontal: false, vertical: true)
+                
+                .navigationTitle("Clipboard")
+            }
+            .frame(maxHeight: .infinity, alignment: .topLeading)
+        }
     }
 }
 

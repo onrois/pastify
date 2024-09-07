@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct RoundedBorder: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+extension View {
+    func roundedBorder(_ color: Color, width: CGFloat = 1, radius: CGFloat) -> some View {
+        self.overlay {
+            RoundedRectangle(cornerRadius: radius)
+                .inset(by: width / 2)
+                .stroke(color, lineWidth: width, antialiased: true)
+        }
     }
-}
-
-#Preview {
-    RoundedBorder()
 }

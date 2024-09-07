@@ -17,7 +17,7 @@ struct CategoryItemView: View {
         Text(category.name)
             .padding(.horizontal, 20)
             .padding(.vertical, 6)
-            .background(isSelected ? .yellow.opacity(0.2) : .gray.opacity(0.2))
+            .background(isSelected ? .yellow.opacity(0.2) : Colors.bgTertiary)
             .cornerRadius(8)
             .roundedBorder(isSelected ? .yellow.opacity(1) : .gray.opacity(1), radius: 8)
             .animation(.easeIn, value: UUID())

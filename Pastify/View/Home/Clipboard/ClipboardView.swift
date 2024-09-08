@@ -34,7 +34,7 @@ struct ClipboardView: View {
                         .fixedSize(horizontal: false, vertical: true)
                         
                         
-                            
+                        
                     }
                     
                     
@@ -51,10 +51,15 @@ struct ClipboardView: View {
     
     func editCategory() -> some View {
         HStack {
-            Image(systemName: "chevron.up.chevron.down")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 18, height: 18)
+            Button(action: {
+                
+            }) {
+                Image(systemName: "chevron.up.chevron.down")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 18, height: 18)
+            }
+            .buttonStyle(.plain)
         }
         .foregroundColor(.accentPrimaryText)
     }
@@ -70,7 +75,7 @@ struct ClipboardView: View {
                     .frame(maxWidth: .infinity)
                     .background(MyColor.bgPrimary)
                     .cornerRadius(Radius.medium)
-//                    .roundedBorder(MyColor.bgTertiary, radius: Radius.medium)
+                //                    .roundedBorder(MyColor.bgTertiary, radius: Radius.medium)
             }
         }.padding()
     }

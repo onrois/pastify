@@ -14,22 +14,30 @@ struct CategoryItemView: View {
     var body: some View {
         let isSelected = currentCategory?.name == category.name
         
-        HStack {
-            colorDot(color: MyColor.accentPrimary)
-            VSpacer(.small)
-            Text(category.name)
-                .font(.r16)
-                .onTapGesture {
-                    currentCategory = category
+        Button(action: {currentCategory = category}, label: {
+            HStack {
+                if category.icon != nil {
+                    Image(systemName: category.icon!)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 16, height: 16)
+                } else {
+                    colorDot(color: MyColor.accentPrimary)
                 }
-        }
-        .padding(.horizontal, Spacing.medium)
-        .padding(.vertical, Spacing.small)
-        .background(isSelected ? MyColor.accentPrimaryBg : MyColor.bgPrimary)
-        .cornerRadius(Radius.medium)
-        .roundedBorder(isSelected ? MyColor.accentPrimary : MyColor.bgTertiary, radius: Radius.medium)
-        .foregroundColor(isSelected ? MyColor.textPrimary : MyColor.textPrimary)
-        .animation(.easeIn, value: UUID())
+                VSpacer(.small)
+                Text(category.name)
+                    .font(.r16)
+            }
+            .padding(.horizontal, Spacing.medium)
+            .padding(.vertical, Spacing.small)
+            .background(isSelected ? MyColor.accentPrimaryBg : MyColor.bgPrimary)
+            .cornerRadius(Radius.medium)
+            .roundedBorder(isSelected ? MyColor.accentPrimary : MyColor.bgTertiary, radius: Radius.medium)
+            .foregroundColor(isSelected ? MyColor.textPrimary : MyColor.textPrimary)
+            .animation(.easeIn, value: UUID())
+            
+        }).buttonStyle(.plain)
+        
     }
     
     func colorDot(color: Color) -> some View {

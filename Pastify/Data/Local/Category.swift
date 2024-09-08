@@ -13,14 +13,16 @@ struct Category {
     let name: String
     let createdOn: Date
     let order: Int
-    let icon: String? = nil
-    let color: String? = nil
+    var icon: String? = nil
+    var color: String? = nil
     let isDefault: Bool = false
     
-    init(_ name: String) {
+    init(_ name: String, icon: String? = nil, color: String? = nil) {
         self.id = UUID().uuidString
         self.name = name
         self.createdOn = Date.now
         self.order = 1
+        self.icon = icon
+        self.color = color
     }
 }

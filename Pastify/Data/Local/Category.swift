@@ -13,6 +13,9 @@ struct Category {
     let name: String
     let createdOn: Date
     let order: Int
+    let icon: String? = nil
+    let color: String? = nil
+    let isDefault: Bool = false
     
     init(_ name: String) {
         self.id = UUID().uuidString

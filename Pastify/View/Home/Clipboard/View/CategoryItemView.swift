@@ -15,6 +15,8 @@ struct CategoryItemView: View {
         let isSelected = currentCategory?.name == category.name
         
         HStack {
+            colorDot(color: MyColor.accentPrimary)
+            VSpacer(.small)
             Text(category.name)
                 .font(.r16)
                 .onTapGesture {
@@ -23,7 +25,7 @@ struct CategoryItemView: View {
         }
         .padding(.horizontal, Spacing.medium)
         .padding(.vertical, Spacing.small)
-        .background(isSelected ? MyColor.accentPrimaryBg : MyColor.bgSecondary)
+        .background(isSelected ? MyColor.accentPrimaryBg : MyColor.bgPrimary)
         .cornerRadius(Radius.medium)
         .roundedBorder(isSelected ? MyColor.accentPrimary : MyColor.bgTertiary, radius: Radius.medium)
         .foregroundColor(isSelected ? MyColor.textPrimary : MyColor.textPrimary)
@@ -38,7 +40,7 @@ struct CategoryItemView: View {
 }
 
 #Preview {
-    @State var currentCategory: Category? = Category("Default")
+    @State var currentCategory: Category? = Category("")
     
     return VStack {
         CategoryItemView(category: Category("Default"), currentCategory: $currentCategory)

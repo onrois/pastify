@@ -10,6 +10,8 @@ import SwiftUI
 struct ClipboardView: View {
     
     @StateObject private var viewModel = ClipboardViewModel()
+    @State private var isTitleInline = false
+    
     
     var body: some View {
         NavigationView {
@@ -29,24 +31,33 @@ struct ClipboardView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .fixedSize(horizontal: false, vertical: true)
                     
-                    
-                    LazyVStack {
-                        ForEach(0...20, id: \.self) { number in
-                            Text(number.description)
-                                .font(.r20)
-                                .padding(.vertical)
-                                .frame(maxWidth: .infinity)
-                                .background(MyColor.accentPrimaryBg)
-                                .cornerRadius(Radius.medium)
-                        }
-                    }.padding()
+                    dummyContent()
                     
                         .navigationTitle("Clipboard")
+                    
                 }
             }
             .frame(maxHeight: .infinity, alignment: .topLeading)
+            .background(MyColor.bgSecondary)
         }
     }
+    
+    func dummyContent() -> some View {
+        LazyVGrid(
+            columns: [GridItem(.flexible()), GridItem(.flexible())]
+        ) {
+            ForEach(0...50, id: \.self) { number in
+                Text(number.description)
+                    .font(.r20)
+                    .padding(.vertical)
+                    .frame(maxWidth: .infinity)
+                    .background(Color.white)
+                    .cornerRadius(Radius.medium)
+//                    .roundedBorder(MyColor.bgTertiary, radius: Radius.medium)
+            }
+        }.padding()
+    }
+    
 }
 
 #Preview {

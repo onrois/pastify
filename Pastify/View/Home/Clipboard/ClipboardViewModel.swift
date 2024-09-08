@@ -10,8 +10,8 @@ import Foundation
 class ClipboardViewModel: ObservableObject {
     
     @Published private (set) var categories: [Category] = [
-        Category("Default"),
-        Category("Passwords"),
+        Category("History"),
+        Category("Important"),
         Category("Personal"),
         Category("Office")
     ]

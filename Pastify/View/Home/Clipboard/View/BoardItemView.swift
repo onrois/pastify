@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct CategoryItemView: View {
-    let category: Category
-    @Binding var currentCategory: Category?
+struct BoardItemView: View {
+    let category: Board
+    @Binding var currentCategory: Board?
     
     var body: some View {
         let isSelected = currentCategory?.name == category.name
@@ -48,9 +48,9 @@ struct CategoryItemView: View {
 }
 
 #Preview {
-    @State var currentCategory: Category? = Category("")
+    @State var currentCategory: Board? = Board("")
     
     return VStack {
-        CategoryItemView(category: Category("Default"), currentCategory: $currentCategory)
+        BoardItemView(category: Board("Default"), currentCategory: $currentCategory)
     }
 }

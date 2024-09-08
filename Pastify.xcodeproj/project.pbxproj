@@ -14,8 +14,8 @@
 		D702F2152C8C7C4400FA06E3 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D702F2142C8C7C4400FA06E3 /* HomeScreen.swift */; };
 		D702F2182C8C958B00FA06E3 /* ClipboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D702F2172C8C958B00FA06E3 /* ClipboardView.swift */; };
 		D702F21A2C8C95FC00FA06E3 /* ClipboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D702F2192C8C95FC00FA06E3 /* ClipboardViewModel.swift */; };
-		D702F21D2C8C978500FA06E3 /* CategoryItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D702F21C2C8C978500FA06E3 /* CategoryItemView.swift */; };
-		D702F21F2C8C986400FA06E3 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = D702F21E2C8C986400FA06E3 /* Category.swift */; };
+		D702F21D2C8C978500FA06E3 /* BoardItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D702F21C2C8C978500FA06E3 /* BoardItemView.swift */; };
+		D702F21F2C8C986400FA06E3 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = D702F21E2C8C986400FA06E3 /* Board.swift */; };
 		D702F2232C8CB49800FA06E3 /* RoundedBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D702F2222C8CB49800FA06E3 /* RoundedBorder.swift */; };
 		D702F2262C8CBF0900FA06E3 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D702F2252C8CBF0900FA06E3 /* Color.swift */; };
 		D702F2282C8CCEF300FA06E3 /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D702F2272C8CCEF300FA06E3 /* Spacing.swift */; };
@@ -23,7 +23,8 @@
 		D702F22D2C8CD8CE00FA06E3 /* CustomSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D702F22C2C8CD8CE00FA06E3 /* CustomSpacer.swift */; };
 		D702F22F2C8CDE1100FA06E3 /* MyFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = D702F22E2C8CDE1100FA06E3 /* MyFont.swift */; };
 		D702F2312C8CDE4D00FA06E3 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = D702F2302C8CDE4D00FA06E3 /* Font.swift */; };
-		D702F2342C8D8FB700FA06E3 /* EditCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D702F2332C8D8FB700FA06E3 /* EditCategoryView.swift */; };
+		D702F2342C8D8FB700FA06E3 /* BoardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D702F2332C8D8FB700FA06E3 /* BoardListView.swift */; };
+		D702F2372C8DF44F00FA06E3 /* AddBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D702F2362C8DF44F00FA06E3 /* AddBoardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,8 +36,8 @@
 		D702F2142C8C7C4400FA06E3 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		D702F2172C8C958B00FA06E3 /* ClipboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardView.swift; sourceTree = "<group>"; };
 		D702F2192C8C95FC00FA06E3 /* ClipboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardViewModel.swift; sourceTree = "<group>"; };
-		D702F21C2C8C978500FA06E3 /* CategoryItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItemView.swift; sourceTree = "<group>"; };
-		D702F21E2C8C986400FA06E3 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		D702F21C2C8C978500FA06E3 /* BoardItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardItemView.swift; sourceTree = "<group>"; };
+		D702F21E2C8C986400FA06E3 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		D702F2222C8CB49800FA06E3 /* RoundedBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBorder.swift; sourceTree = "<group>"; };
 		D702F2252C8CBF0900FA06E3 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		D702F2272C8CCEF300FA06E3 /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
@@ -44,7 +45,8 @@
 		D702F22C2C8CD8CE00FA06E3 /* CustomSpacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSpacer.swift; sourceTree = "<group>"; };
 		D702F22E2C8CDE1100FA06E3 /* MyFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFont.swift; sourceTree = "<group>"; };
 		D702F2302C8CDE4D00FA06E3 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
-		D702F2332C8D8FB700FA06E3 /* EditCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoryView.swift; sourceTree = "<group>"; };
+		D702F2332C8D8FB700FA06E3 /* BoardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardListView.swift; sourceTree = "<group>"; };
+		D702F2362C8DF44F00FA06E3 /* AddBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBoardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +136,7 @@
 		D702F20E2C8C78AD00FA06E3 /* Local */ = {
 			isa = PBXGroup;
 			children = (
-				D702F21E2C8C986400FA06E3 /* Category.swift */,
+				D702F21E2C8C986400FA06E3 /* Board.swift */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -156,7 +158,7 @@
 		D702F2112C8C78D200FA06E3 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				D702F2322C8D8FA500FA06E3 /* EditCategory */,
+				D702F2322C8D8FA500FA06E3 /* BoardListView */,
 				D702F2162C8C957A00FA06E3 /* Clipboard */,
 				D702F2142C8C7C4400FA06E3 /* HomeScreen.swift */,
 			);
@@ -183,7 +185,7 @@
 		D702F21B2C8C975E00FA06E3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D702F21C2C8C978500FA06E3 /* CategoryItemView.swift */,
+				D702F21C2C8C978500FA06E3 /* BoardItemView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -226,12 +228,21 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		D702F2322C8D8FA500FA06E3 /* EditCategory */ = {
+		D702F2322C8D8FA500FA06E3 /* BoardListView */ = {
 			isa = PBXGroup;
 			children = (
-				D702F2332C8D8FB700FA06E3 /* EditCategoryView.swift */,
+				D702F2352C8DF43E00FA06E3 /* View */,
+				D702F2332C8D8FB700FA06E3 /* BoardListView.swift */,
 			);
-			path = EditCategory;
+			path = BoardListView;
+			sourceTree = "<group>";
+		};
+		D702F2352C8DF43E00FA06E3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D702F2362C8DF44F00FA06E3 /* AddBoardView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,20 +316,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				D702F1E52C8C54D900FA06E3 /* ContentView.swift in Sources */,
-				D702F2342C8D8FB700FA06E3 /* EditCategoryView.swift in Sources */,
+				D702F2342C8D8FB700FA06E3 /* BoardListView.swift in Sources */,
 				D702F2262C8CBF0900FA06E3 /* Color.swift in Sources */,
 				D702F2312C8CDE4D00FA06E3 /* Font.swift in Sources */,
 				D702F22D2C8CD8CE00FA06E3 /* CustomSpacer.swift in Sources */,
 				D702F2182C8C958B00FA06E3 /* ClipboardView.swift in Sources */,
 				D702F1E32C8C54D900FA06E3 /* PastifyApp.swift in Sources */,
 				D702F22A2C8CCF9E00FA06E3 /* Radius.swift in Sources */,
-				D702F21D2C8C978500FA06E3 /* CategoryItemView.swift in Sources */,
+				D702F21D2C8C978500FA06E3 /* BoardItemView.swift in Sources */,
+				D702F2372C8DF44F00FA06E3 /* AddBoardView.swift in Sources */,
 				D702F22F2C8CDE1100FA06E3 /* MyFont.swift in Sources */,
 				D702F2152C8C7C4400FA06E3 /* HomeScreen.swift in Sources */,
 				D702F2232C8CB49800FA06E3 /* RoundedBorder.swift in Sources */,
 				D702F2282C8CCEF300FA06E3 /* Spacing.swift in Sources */,
 				D702F21A2C8C95FC00FA06E3 /* ClipboardViewModel.swift in Sources */,
-				D702F21F2C8C986400FA06E3 /* Category.swift in Sources */,
+				D702F21F2C8C986400FA06E3 /* Board.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -22,14 +22,14 @@ struct ClipboardView: View {
                     ZStack(alignment: .trailing) {
                         ScrollView(.horizontal, showsIndicators: false) {
                             LazyHStack(alignment: .center) {
-                                editCategory(action: {
+                                editBoards(action: {
                                     showEditCategory.toggle()
                                 })
                                 
                                 VSpacer(.medium)
                                 
                                 ForEach(viewModel.categories, id: \.name) { category in
-                                    CategoryItemView(category: category, currentCategory: $viewModel.currentCategory)
+                                    BoardItemView(category: category, currentCategory: $viewModel.currentCategory)
                                 }
                             }
                             .padding(.horizontal)
@@ -55,14 +55,14 @@ struct ClipboardView: View {
             .frame(maxHeight: .infinity, alignment: .topLeading)
             .background(MyColor.bgSecondary)
             .sheet(isPresented: $showEditCategory, content: {
-                EditCategoryView(categories: $viewModel.categories, onDismiss: {
+                BoardListView(boards: $viewModel.categories, onDismiss: {
                     showEditCategory.toggle()
                 })
             })
         }
     }
     
-    func editCategory(action: @escaping () -> Void) -> some View {
+    func editBoards(action: @escaping () -> Void) -> some View {
         HStack {
             Button(action: action) {
                 Image(systemName: "chevron.up.chevron.down")

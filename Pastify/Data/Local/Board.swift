@@ -8,9 +8,9 @@
 import Foundation
 import SwiftUI
 
-struct Category {
+struct Board {
     let id: String
-    let name: String
+    var name: String
     let createdOn: Date
     let order: Int
     var icon: String?
@@ -25,5 +25,13 @@ struct Category {
         self.icon = icon
         self.color = color
         self.isDefault = isDefault
+    }
+    
+    init() {
+        self.id = UUID().uuidString
+        self.name = ""
+        self.createdOn = Date.now
+        self.order = 1
+        self.isDefault = false
     }
 }

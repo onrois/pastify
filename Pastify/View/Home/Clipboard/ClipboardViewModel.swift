@@ -9,11 +9,11 @@ import Foundation
 
 class ClipboardViewModel: ObservableObject {
     
-    @Published private (set) var categories: [Category] = [
-        Category("History", icon: "clock.arrow.circlepath"),
+    @Published var categories: [Category] = [
+        Category("History", icon: "clock.arrow.circlepath", isDefault: true),
         Category("Important"),
-//        Category("Personal"),
-//        Category("Office")
+        Category("Personal"),
+        Category("Office")
     ]
     
     @Published var currentCategory : Category? = nil

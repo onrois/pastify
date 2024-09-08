@@ -14,6 +14,7 @@ struct ContentView: View {
                 HomeScreen()
             }
         }
+        .tint(MyColor.accentPrimary)
     }
 }
 

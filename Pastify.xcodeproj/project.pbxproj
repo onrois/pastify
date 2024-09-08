@@ -23,6 +23,7 @@
 		D702F22D2C8CD8CE00FA06E3 /* CustomSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D702F22C2C8CD8CE00FA06E3 /* CustomSpacer.swift */; };
 		D702F22F2C8CDE1100FA06E3 /* MyFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = D702F22E2C8CDE1100FA06E3 /* MyFont.swift */; };
 		D702F2312C8CDE4D00FA06E3 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = D702F2302C8CDE4D00FA06E3 /* Font.swift */; };
+		D702F2342C8D8FB700FA06E3 /* EditCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D702F2332C8D8FB700FA06E3 /* EditCategoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		D702F22C2C8CD8CE00FA06E3 /* CustomSpacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSpacer.swift; sourceTree = "<group>"; };
 		D702F22E2C8CDE1100FA06E3 /* MyFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFont.swift; sourceTree = "<group>"; };
 		D702F2302C8CDE4D00FA06E3 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		D702F2332C8D8FB700FA06E3 /* EditCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 		D702F2112C8C78D200FA06E3 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				D702F2322C8D8FA500FA06E3 /* EditCategory */,
 				D702F2162C8C957A00FA06E3 /* Clipboard */,
 				D702F2142C8C7C4400FA06E3 /* HomeScreen.swift */,
 			);
@@ -221,6 +224,14 @@
 				D702F22C2C8CD8CE00FA06E3 /* CustomSpacer.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		D702F2322C8D8FA500FA06E3 /* EditCategory */ = {
+			isa = PBXGroup;
+			children = (
+				D702F2332C8D8FB700FA06E3 /* EditCategoryView.swift */,
+			);
+			path = EditCategory;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D702F1E52C8C54D900FA06E3 /* ContentView.swift in Sources */,
+				D702F2342C8D8FB700FA06E3 /* EditCategoryView.swift in Sources */,
 				D702F2262C8CBF0900FA06E3 /* Color.swift in Sources */,
 				D702F2312C8CDE4D00FA06E3 /* Font.swift in Sources */,
 				D702F22D2C8CD8CE00FA06E3 /* CustomSpacer.swift in Sources */,

@@ -10,7 +10,7 @@ import SwiftUI
 struct ClipboardView: View {
     
     @StateObject private var viewModel = ClipboardViewModel()
-    @State private var isTitleInline = false
+    @State private var showEditCategory = false
     
     
     var body: some View {
@@ -21,12 +21,16 @@ struct ClipboardView: View {
                     
                     ZStack(alignment: .trailing) {
                         ScrollView(.horizontal, showsIndicators: false) {
-                            LazyHStack() {
+                            LazyHStack(alignment: .center) {
+                                editCategory(action: {
+                                    showEditCategory.toggle()
+                                })
+                                
+                                VSpacer(.medium)
+                                
                                 ForEach(viewModel.categories, id: \.name) { category in
                                     CategoryItemView(category: category, currentCategory: $viewModel.currentCategory)
                                 }
-                                VSpacer(.medium)
-                                editCategory()
                             }
                             .padding(.horizontal)
                         }
@@ -46,14 +50,17 @@ struct ClipboardView: View {
             }
             .frame(maxHeight: .infinity, alignment: .topLeading)
             .background(MyColor.bgSecondary)
+            .sheet(isPresented: $showEditCategory, content: {
+                EditCategoryView(categories: $viewModel.categories, onDismiss: {
+                    showEditCategory.toggle()
+                })
+            })
         }
     }
     
-    func editCategory() -> some View {
+    func editCategory(action: @escaping () -> Void) -> some View {
         HStack {
-            Button(action: {
-                
-            }) {
+            Button(action: action) {
                 Image(systemName: "chevron.up.chevron.down")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -61,7 +68,8 @@ struct ClipboardView: View {
             }
             .buttonStyle(.plain)
         }
-        .foregroundColor(.accentPrimaryText)
+        .frame(height: 38)
+        .foregroundColor(.textPrimary)
     }
     
     func dummyContent() -> some View {
@@ -75,7 +83,6 @@ struct ClipboardView: View {
                     .frame(maxWidth: .infinity)
                     .background(MyColor.bgPrimary)
                     .cornerRadius(Radius.medium)
-                //                    .roundedBorder(MyColor.bgTertiary, radius: Radius.medium)
             }
         }.padding()
     }

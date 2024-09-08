@@ -19,17 +19,24 @@ struct ClipboardView: View {
                 VStack() {
                     HSpacer(.xSmall)
                     
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        LazyHStack() {
-                            ForEach(viewModel.categories, id: \.name) { category in
-                                CategoryItemView(category: category, currentCategory: $viewModel.currentCategory)
+                    ZStack(alignment: .trailing) {
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            LazyHStack() {
+                                ForEach(viewModel.categories, id: \.name) { category in
+                                    CategoryItemView(category: category, currentCategory: $viewModel.currentCategory)
+                                }
+                                VSpacer(.medium)
+                                editCategory()
                             }
+                            .padding(.horizontal)
                         }
-                        .padding(.horizontal)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .fixedSize(horizontal: false, vertical: true)
                         
+                        
+                            
                     }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .fixedSize(horizontal: false, vertical: true)
+                    
                     
                     dummyContent()
                     
@@ -42,6 +49,16 @@ struct ClipboardView: View {
         }
     }
     
+    func editCategory() -> some View {
+        HStack {
+            Image(systemName: "chevron.up.chevron.down")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 18, height: 18)
+        }
+        .foregroundColor(.accentPrimaryText)
+    }
+    
     func dummyContent() -> some View {
         LazyVGrid(
             columns: [GridItem(.flexible()), GridItem(.flexible())]
@@ -51,7 +68,7 @@ struct ClipboardView: View {
                     .font(.r20)
                     .padding(.vertical)
                     .frame(maxWidth: .infinity)
-                    .background(Color.white)
+                    .background(MyColor.bgPrimary)
                     .cornerRadius(Radius.medium)
 //                    .roundedBorder(MyColor.bgTertiary, radius: Radius.medium)
             }

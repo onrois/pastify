@@ -37,14 +37,18 @@ struct ClipboardView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .fixedSize(horizontal: false, vertical: true)
                         
-                        
-                        
                     }
                     
                     
                     dummyContent()
                     
                         .navigationTitle("Clipboard")
+                        .toolbar {
+                            
+                                Image(systemName: "gear")
+                                    .foregroundStyle(.textPrimary)
+                            
+                        }
                     
                 }
             }

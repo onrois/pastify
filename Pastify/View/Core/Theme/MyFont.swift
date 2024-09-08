@@ -21,6 +21,11 @@ extension FontStyle {
     static let r16 = FontStyle(Font.system(size: 16, weight: .regular, design: .rounded))
     static let r20 = FontStyle(Font.system(size: 20, weight: .regular, design: .rounded))
     static let r24 = FontStyle(Font.system(size: 24, weight: .regular, design: .rounded))
+    
+    static let m16 = FontStyle(Font.system(size: 16, weight: .medium, design: .rounded))
+    static let m20 = FontStyle(Font.system(size: 20, weight: .medium, design: .rounded))
+    
+    static let b16 = FontStyle(Font.system(size: 16, weight: .bold, design: .rounded))
 }
 
 extension Text {

@@ -11,29 +11,52 @@ struct EditCategoryView: View {
     @Binding var categories: [Category]
     let onDismiss: () -> Void
     
+    @State private var showEditCategory = false
+
+    
     var body: some View {
         NavigationView {
             
-            List {
-                ForEach(categories, id: \.id) { category in
-                    categoryItem(category: category)
-                }.onMove(perform: { indices, newOffset in
-                    categories.move(fromOffsets: indices, toOffset: newOffset)
-                })
-                .onDelete(perform: { indexSet in
-                    withAnimation(.spring, {
+            ZStack(alignment: .bottomTrailing) {
+                List {
+                    ForEach(categories, id: \.id) { category in
+                        categoryItem(category: category)
+                    }.onMove(perform: { indices, newOffset in
+                        categories.move(fromOffsets: indices, toOffset: newOffset)
+                    })
+                    .onDelete(perform: { indexSet in
                         categories.remove(atOffsets: indexSet)
                     })
-                })
-            }.listStyle(.automatic)
-            
-                .navigationTitle("Category")
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar {
-                    Button("Done") {
-                        onDismiss()
-                    }.foregroundStyle(.accentPrimaryText)
+                }.listStyle(.automatic)
+                
+                
+                Button {
+                    showEditCategory.toggle()
+                } label: {
+                    HStack {
+                        Image(systemName: "plus")
+                            .font(.title2.weight(.medium))
+                    }
+                    .padding()
+                    .background(MyColor.accentPrimary)
+                    .foregroundColor(MyColor.bgPrimary)
+                    .clipShape(Circle())
                 }
+                .padding(.horizontal)
+            }
+            
+            .navigationTitle("Category")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                Button("Done") {
+                    onDismiss()
+                }.foregroundStyle(.accentPrimaryText)
+            }
+            .sheet(isPresented: $showEditCategory, content: {
+                Text("EDIT CATEGORY").frame(maxWidth: .infinity)
+                
+                    .presentationDetents([.height(200)])
+            })
         }
     }
     
@@ -66,9 +89,9 @@ struct EditCategoryView: View {
                         let ind = categories.firstIndex { item in
                             item.id == category.id
                         }
-                        withAnimation(.spring, {
+                        withAnimation(.spring) {
                             categories.remove(at: ind!)
-                        })
+                        }
                     }
                 
             }

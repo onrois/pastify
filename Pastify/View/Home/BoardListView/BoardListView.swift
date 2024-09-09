@@ -13,12 +13,14 @@ struct BoardListView: View {
     
     @State private var showEditBoard = false
     @State private var currentBoard: Board? = nil
+    @FocusState var focusedField: FocusedField?
     
     
     var body: some View {
         NavigationView {
             
             ZStack(alignment: .bottomTrailing) {
+                
                 List {
                     ForEach(boards, id: \.id) { board in
                         boardItem(board: board, action: {
@@ -33,13 +35,17 @@ struct BoardListView: View {
                     .onDelete(perform: { indexSet in
                         boards.remove(atOffsets: indexSet)
                     })
-                }.listStyle(.automatic)
+                }.listStyle(.automatic).safeAreaPadding(.vertical).padding(.top, Spacing.medium)
                 
                 
                 Button {
-                    withAnimation {
-                        showEditBoard.toggle()
+                    focusedField = .first
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                        withAnimation {
+                            showEditBoard.toggle()
+                        }
                     }
+                    
                     
                 } label: {
                     HStack {
@@ -51,22 +57,25 @@ struct BoardListView: View {
                     .foregroundColor(MyColor.bgPrimary)
                     .clipShape(Circle())
                 }
-                .padding(.horizontal)
+                .safeAreaPadding(.all)
+                .padding(.horizontal, Spacing.small)
+                .padding(.vertical, Spacing.medium)
                 
                 
                 ZStack {
                     AddBoardView(board: $currentBoard, onSave: {}, onCancel: {
                         withAnimation {
+                            focusedField = .none
+                            
                             showEditBoard.toggle()
                         }
-                    })
-                    .opacity(showEditBoard ? 1 : 0)
-                    .offset(y: showEditBoard ? 0 : UIScreen.main.bounds.height)
-                    .animation(.spring, value: showEditBoard)
+                    }, showEditBoard: showEditBoard, focusedField: _focusedField)
+                    .offset(y: showEditBoard ? 0 : 200)
                 }.frame(maxHeight: .infinity, alignment: .bottom)
-                    .ignoresSafeArea(.container)
+                
+                
             }
-            
+            .ignoresSafeArea(.container)
             .navigationTitle("Boards")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
